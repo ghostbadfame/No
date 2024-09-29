@@ -5,7 +5,7 @@ import InsertIcon from '@/assets/Insert.svg';
 import RegenerateIcon from '@/assets/Regenerate.svg';
 import "@/assets/style.css"
 
-interface IPrompts {
+interface Prompts {
     role: string,
     message: string,
 }
@@ -25,7 +25,7 @@ const style = {
 };
 
 const PromptModal = ({ open, handleClose }: { open: boolean; handleClose: () => void }) => {
-    const [prompts, setPrompts] = useState<IPrompts[]>([]);
+    const [prompts, setPrompts] = useState<Prompts[]>([]);
     const [userPrompt, setUserPrompt] = useState<string>("");
 
     const handleGenerate = () => {

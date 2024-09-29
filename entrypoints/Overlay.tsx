@@ -29,7 +29,7 @@ function Overlay() {
     const imgElement = document.createElement("img");
     imgElement.src = AiIcon;
     imgElement.alt = "ai-icon";
-    imgElement.setAttribute("style", "width: 32px; height: 32px; cursor:pointer;");
+    imgElement.setAttribute("style", "width: 34px; height: 34px; cursor:pointer;");
     imgElement.addEventListener("click", () => {
       setShowModal(true);
     });

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Box, Modal, Typography } from "@mui/material";
-import VectorIcon from 'assets/Vector.svg';
-import InsertIcon from 'assets/Insert.svg';
-import RegenerateIcon from 'assets/Regenerate.svg';
-import "style.css"
+import VectorIcon from '@/assets/Vector.svg';
+import InsertIcon from '@/assets/Insert.svg';
+import RegenerateIcon from '@/assets/Regenerate.svg';
+import "@/assets/style.css"
 
 interface IPrompts {
     role: string,
@@ -28,7 +28,6 @@ const PromptModal = ({ open, handleClose }: { open: boolean; handleClose: () => 
     const [prompts, setPrompts] = useState<IPrompts[]>([]);
     const [userPrompt, setUserPrompt] = useState<string>("");
 
-    // method to update states and render div accordingly
     const handleGenerate = () => {
         if (userPrompt && userPrompt?.length > 0) {
             const data = [
@@ -46,14 +45,14 @@ const PromptModal = ({ open, handleClose }: { open: boolean; handleClose: () => 
         setUserPrompt("");
     }
 
-    // method to add the AI response in a textbox
+
     const handleInsert = () => {
         const placeHolder = document.querySelector(".msg-form__placeholder");
         placeHolder?.remove();
         const textBox = document.querySelector(".msg-form__contenteditable");
         if (textBox) {
             textBox.textContent = prompts[prompts.length - 1]?.message;
-            // update the position of cursor
+
             const range = document.createRange();
             range.selectNodeContents(textBox);
             range.collapse(false);
